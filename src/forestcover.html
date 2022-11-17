@@ -7,43 +7,65 @@
   <script src="https://unpkg.com/globe.gl"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
   <link rel="stylesheet" href="./main.css" />
+  <link rel="stylesheet" href="./forestcover.css"/>
 </head>
 
 <body>
-  <div class="top-info-container">
-    <div style="display: flex; justify-content: center;"></div>
-    <button class="button button1" onclick="location.href='./forestcover.html'" type="button">Forest Cover</button>
-    <button class="button button2" onclick="location.href='./volcanoes.html'" type="button">Volcanoes</button>
-    <button class="button button3" onclick="location.href='./earthquakes.html'" type="button">Earthquakes</button>
-    <button class="button button4" onclick="location.href='./satellites.html'" type="button">Satellites</button>
-  </div>
-  <div class="side-info-panel">
-    <div>
-      <div class="canvasdiv">
+  <div class="split left cn" style="overflow: auto;">
+    <div class="overlay">
+      <div class="overlay__inner">
+        <h1 class="overlay__title">Forest Cover</h1>
+      <p class="overlay__description">
+        We have visualised the forest cover across nations in the period from 1990 to 2020.
+        <strong> A json file has been used to gather the data</strong>
+      </p>
+      <h3 class="overlay__title">
+        Visual Insights
+      </h3>
+      <div>
         <canvas id="globalgraph" class="graphcanvas"></canvas>
+        <p class="overlay__description">There was a steep decline in the global forest cover in 2016
+          due to widespread forest fires
+        </p>
+        <a class="overlay__link" href="https://www.wri.org/insights/global-tree-cover-loss-rose-51-percent-2016">(Know more)</a>
+        <br><br>
+      </div>
+      <div>
+        <canvas id="yearlygraph" class="graphcanvas"></canvas>
+        <p class="overlay__description">Country with most forest cover:
+          <span id="bestcountry"></span>
+        </p>
         <br>
       </div>
-    </div>
-    <div>
-        <canvas id="yearlygraph" class="graphcanvas"></canvas>
-        <br>
-    </div>
-    <div>
-      <!-- <br> -->
-        <canvas id="maxdiffgraph" class="graphcanvas"></canvas>
+      <div>
+        <!-- <br> -->
+          <canvas id="maxdiffgraph" class="graphcanvas"></canvas>
+      </div>
+      </div>
+      
     </div>
   </div>
-  <div class="mainside">
+  <!-- <div class="side-info-panel">
+    <div>
+    </div>
+  </div> -->
+  <div class="split right">
+    <div class="top-info-container">
+      <div style="display: flex; justify-content: center;"></div>
+      <button class="button button1" onclick="location.href='./forestcover.html'" type="button">Forest Cover</button>
+      <button class="button button2" onclick="location.href='./volcanoes.html'" type="button">Volcanoes</button>
+      <button class="button button3" onclick="location.href='./earthquakes.html'" type="button">Earthquakes</button>
+      <button class="button button4" onclick="location.href='./satellites.html'" type="button">Satellites</button>
+    </div>
     <div id="globeViz"></div>
-  </div>
-  <div class="bottom-info-container">
-    <div style="display: flex; justify-content: center;">
-      <div class="slidecontainer">
-        <input type="range" min="1990" max="2020" value="2020" class="slider" id="myRange">
-        <p>Year: <span id="demo"></span></p>
+    <div class="bottom-info-container">
+      <div style="display: flex; justify-content: center;">
+        <div class="slidecontainer">
+          <input type="range" min="1990" max="2020" value="2020" class="slider" id="myRange">
+          <p>Year: <span id="demo"></span></p>
+        </div>
       </div>
     </div>
   </div>
   <script src="./forestcover.js"></script>
-  <!-- <script src="./trial.js"></script> -->
 </body>

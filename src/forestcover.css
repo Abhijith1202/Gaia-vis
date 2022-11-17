@@ -1,0 +1,143 @@
+.side-info-panel {
+	width: 25%;
+	height: 93%;
+	float: left;
+	overflow: auto;
+}
+
+.side-panel-text {
+	color: white;
+	font-size: 16px;
+}
+
+.globe-side {
+	width: 75%;
+	height: 100%;
+	float: right;
+	position: relative;
+}
+
+/*  align globeviz to the centre of mainside */
+.globeViz {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.graphcanvas {
+	width: 800;
+	height: 600;
+	/* background:  #333333; */
+	border-radius: 1rem;
+	/* change text colour in the canvas to black */
+	/* text-emphasis-color: black; */
+}
+
+/* from below */
+
+body {
+    margin: 0;
+    color: white;
+  }
+  .split {
+    height: 100%;
+    width: 50%;
+    position: fixed;
+    top: 0;
+  }
+  .left {
+    left: 0;
+    background-color: #111;
+  }
+  .right {
+    right: 0;
+  }
+ 
+  h1 {
+    color: white;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 300;
+  }
+
+  .cn {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+  }
+
+.overlay {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding-top: 5rem;
+
+}
+
+.overlay__inner {
+  max-height: 100vh;
+  max-width: 36rem;
+  padding: 10rem;
+}
+
+.overlay__title {
+  font-size: 1.875rem;
+  line-height: 2.75rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+
+.overlay__description {
+  font-size: 1rem;
+  line-height: 1.75rem;
+  margin-bottom: 3rem;
+}
+
+.overlay__link {
+    font-size: 1rem;
+  line-height: 1.75rem;
+  margin-bottom: 3rem;
+  color: azure;
+}
+
+@media (prefers-contrast: high) {
+  .orb-canvas {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 1140px) {
+  .overlay {
+    padding: 8rem 4rem;
+  }
+}
+
+@media only screen and (max-width: 840px) {
+  body {
+    padding: 1.5rem;
+  }
+
+  .overlay {
+    padding: 4rem;
+    height: auto;
+  }
+
+  .overlay__title {
+    font-size: 1.25rem;
+    line-height: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .overlay__description {
+    font-size: 0.875rem;
+    line-height: 1.5rem;
+    margin-bottom: 2.5rem;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .overlay {
+    padding: 1.5rem;
+  }
+}

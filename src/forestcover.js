@@ -3,10 +3,11 @@ const colorScale = d3.scaleSequentialSqrt(d3.interpolateGreens);
 var forestCoverYear = "FOREST2020";
 var slider = document.getElementById("myRange");
 var output = document.getElementById("demo");
+var markcountry=document.getElementById("bestcountry");
 let world;
 output.innerHTML = slider.value;
 var cur_slider_value = slider.value;
-
+var greencountry;
 var OLDEST_YEAR = 1990;
 var NEWEST_YEAR = 2020;
 
@@ -32,6 +33,7 @@ slider.oninput = function ()
 	updateWorld();
 }
 
+
 // init function to create the world, and set the initial state
 function init()
 {
@@ -45,6 +47,7 @@ function init()
 			.globeImageUrl('//unpkg.com/three-globe/example/img/earth-night.jpg')
 			.backgroundImageUrl('//unpkg.com/three-globe/example/img/night-sky.png')
 			.lineHoverPrecision(0)
+            .width(1000)
 			.polygonsData(countries.features.filter(d => d.properties.ISO_A2 !== 'AQ'))
 			.polygonAltitude(0.06)
 			.polygonCapColor(feat => colorScale(getVal(feat)))
@@ -63,9 +66,15 @@ function init()
 			// call updategraph(country) when a country is clicked
 			(document.getElementById('globeViz'))
 	});
+    window.addEventListener('resize', (event) => {
+        world.width([event.target.innerWidth])
+        world.height([event.target.innerHeight])
+      });
 	gettotal();
 	getmaxdiff();
 	getyearly();
+    // display the string greencountry in markcountry
+    markcountry.innerHTML=greencountry;
 
 }
 
@@ -83,6 +92,7 @@ function updateWorld()
 
 // function to get the forest cover of all countries in a particular year
 function getyearly() {
+    var maxval=0,maxcount='Afghanistan';
     var dat=[];
     let year=cur_slider_value;
     console.log("getyearly called\n");
@@ -93,11 +103,18 @@ function getyearly() {
             dat=[];
             var key='FOREST'+year;
             for (var i = 0; i < feat.features.length; i++) {
+                if(feat.features[i].properties[key]>maxval){
+                    maxval=feat.features[i].properties[key];
+                    maxcount=feat.features[i].properties.ADMIN;
+                }
                 dat.push({
                     year: feat.features[i].properties.NAME,
                     value: feat.features[i].properties[key]
                 });
             }
+            greencountry=maxcount;
+            markcountry.innerHTML=greencountry;
+            console.log("maxcount: "+typeof(greencountry)+" "+greencountry+"\n");
             drawbar("Forest Cover in "+year,'yearlygraph',dat);
         }
     );
@@ -232,10 +249,22 @@ function drawbar(subject,cont,dat) {
             },
             options: {
                 // start y axis from 0
+                // change legend text colour to white
+                legend: {
+                    labels: {
+                        fontColor: 'white'
+                    }
+                },
                 scales: {
                     yAxes: [{
                         ticks: {
-                            beginAtZero: true
+                            beginAtZero: true,
+                            fontColor: 'white'
+                        }
+                    }],
+                    xAxes: [{
+                        ticks: {
+                            fontColor: 'white'
                         }
                     }]
                 }
@@ -270,6 +299,27 @@ function drawline(subject, cont,dat) {
                     // if(ty=='bar') {}
                 }]
             },
+            options: {
+                // start y axis from 0
+                // change legend text colour to white
+                legend: {
+                    labels: {
+                        fontColor: 'white'
+                    }
+                },
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            fontColor: 'white'
+                        }
+                    }],
+                    xAxes: [{
+                        ticks: {
+                            fontColor: 'white'
+                        }
+                    }]
+                }
+            }
         });
     }, 250);
 }
