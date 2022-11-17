@@ -1,0 +1,39 @@
+<head>
+	<style>
+		body {
+			margin: 0;
+		}
+
+		#time-log {
+			position: absolute;
+			font-size: 12px;
+			font-family: sans-serif;
+			padding: 5px;
+			border-radius: 3px;
+			background-color: rgba(200, 200, 200, 0.1);
+			color: lavender;
+			bottom: 10px;
+			right: 10px;
+		}
+	</style>
+	<link rel="stylesheet" href="./main.css" />
+	<script src="//unpkg.com/three"></script>
+	<script src="//unpkg.com/satellite.js/dist/satellite.min.js"></script>
+	<script src="//unpkg.com/globe.gl"></script>
+
+  
+	<!--  <script src="../../dist/globe.gl.js"></script>-->
+</head>
+
+<body>
+	<div id="chart"></div>
+	<div id="time-log"></div>
+	<div class="top-info-container">
+		<div style="display: flex; justify-content: center;"></div>
+		<button class="button button1" onclick="location.href='./forestcover.html'" type="button">Forest Cover</button>
+		<button class="button button2" onclick="location.href='./volcanoes.html'" type="button">Volcanoes</button>
+		<button class="button button3" onclick="location.href='./earthquakes.html'" type="button">Earthquakes</button>
+		<button class="button button4" onclick="location.href='./satellites.html'" type="button">Satellites</button>
+    <script src="./satellites.js"></script>
+	</div>
+</body>

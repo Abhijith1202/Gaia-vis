@@ -1,0 +1,160 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: 'Space Mono', monospace;
+	overflow: hidden;
+	background: black;
+}
+
+
+
+.bottom-info-container {
+	z-index: 1;
+	bottom: 20px;
+	position: absolute;
+	color: white;
+	text-align: center;
+	width: 100%;
+}
+
+.slidecontainer {
+	width: 100%;
+	/* Width of the outside container */
+}
+
+/* The slider itself */
+.slider {
+	-webkit-appearance: none;
+	/* Override default CSS styles */
+	appearance: none;
+	width: 100%;
+	/* Full-width */
+	height: 25px;
+	/* Specified height */
+	background: #d3d3d3;
+	/* Grey background */
+	outline: none;
+	/* Remove outline */
+	opacity: 0.7;
+	/* Set transparency (for mouse-over effects on hover) */
+	-webkit-transition: .2s;
+	/* 0.2 seconds transition on hover */
+	transition: opacity .2s;
+}
+
+/* Mouse-over effects */
+.slider:hover {
+	opacity: 1;
+	/* Fully shown on mouse-over */
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.slider::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	/* Override default look */
+	appearance: none;
+	width: 25px;
+	/* Set a specific slider handle width */
+	height: 25px;
+	/* Slider handle height */
+	background: #04AA6D;
+	/* Green background */
+	cursor: pointer;
+	/* Cursor on hover */
+}
+
+.slider::-moz-range-thumb {
+	width: 25px;
+	/* Set a specific slider handle width */
+	height: 25px;
+	/* Slider handle height */
+	background: #04AA6D;
+	/* Green background */
+	cursor: pointer;
+	/* Cursor on hover */
+}
+
+.top-info-container {
+	z-index: 1;
+	top: 20px;
+	position: absolute;
+	text-align: center;
+	width: 100%;
+}
+
+.button {
+	border: none;
+	padding: 16px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 2px;
+	transition-duration: 0.4s;
+	cursor: pointer;
+}
+
+.button1 {
+	background-color: black;
+	color: white;
+	border: 2px solid #4CAF50;
+}
+
+.button1:hover {
+	background-color: #4CAF50;
+	color: white;
+}
+
+.button4 {
+	background-color: black;
+	color: white;
+	border: 2px solid #008CBA;
+}
+
+.button4:hover {
+	background-color: #008CBA;
+	color: white;
+}
+.button2 {
+	background-color: black;
+	color: white;
+	border: 2px solid #e95678;
+}
+
+.button2:hover {
+	background-color: #e95678;
+	color: white;
+}
+.button3 {
+	background-color: black;
+	color: white;
+	border: 2px solid #e95678;
+}
+
+.button3:hover {
+	background-color: #e95678;
+	color: white;
+}
+
+.side-info-panel {
+	width: 30%;
+	height: 100%;
+	float: left;
+}
+
+.mainside {
+	width: 70%;
+	height: 100%;
+	float: right;
+}
+
+.graphcanvas {
+	width: 100%;
+	height: 30%;
+	background: #eeeee4;
+	/* change text colour in the canvas to black */
+	/* text-emphasis-color: black; */
+}

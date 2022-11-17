@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <title>My First Web Page</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+        <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
+        <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js@4.0.1/dist/chart.umd.min.js"></script> -->
+        <link rel="stylesheet" href="./main.css" />
+    </head>
+    <body>
+        <h1>My First Web Page</h1>
+        <div class="side-info-panel">
+            <div>
+                <canvas id="globalgraph" class="graphcanvas"></canvas>
+                <!-- <button onclick=></button> -->
+                <!-- button which calls draw() onclick -->
+                <button onclick="gettotal()">Global</button>
+                <!-- <button onclick="updategraph('Angola')">Draw</button> -->
+            </div>
+            <div>
+                <canvas id="yearlygraph" class="graphcanvas"></canvas>
+                <!-- <button onclick=></button> -->
+                <!-- button which calls draw() onclick -->
+                <button onclick="getyearly()">Yearly</button>
+                <!-- <button onclick="updategraph('Angola')">Draw</button> -->
+            </div>
+            <div>
+                <canvas id="maxdiffgraph" class="graphcanvas"></canvas>
+                <!-- <button onclick=></button> -->
+                <!-- button which calls draw() onclick -->
+                <button onclick="getmaxdiff()">Difference</button>
+                <!-- <button onclick="updategraph('Angola')">Draw</button> -->
+            </div>
+        </div>
+        <div class="mainside">
+            <h1>Hi</h1>
+        </div>
+        <input type="range" min="1990" max="2020" value="2020" class="slider" id="myRange">
+        <p>Year: <span id="demo"></span></p>
+        <script src="trial.js"></script>
+    </body>
+</html>
